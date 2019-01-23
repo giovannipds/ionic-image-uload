@@ -33,4 +33,12 @@ export class DetailPage {
     console.log('ionViewDidLoad DetailPage');
   }
 
+  showLoader(msg){
+    this.loading = this.loadingCtrl.create({
+        content: msg
+    });
+
+    this.loading.present();
+  }
+
 }
