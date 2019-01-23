@@ -10,8 +10,8 @@ import { Base64 } from '@ionic-native/base64';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
-
-  }
+  constructor(public navCtrl: NavController,
+    private imagePicker: ImagePicker,
+    private base65: Base64) {}
 
 }
