@@ -21,7 +21,12 @@ export class DetailPage {
   id: any;
   loading: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,
+    public navParams: NavParams,
+    public api: ApiProvider,
+    public loadingCtrl: LoadingController,
+    private sanitizer: DomSanitizer) {
+      this.id = navParams.get("id");
   }
 
   ionViewDidLoad() {
