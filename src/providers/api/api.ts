@@ -15,5 +15,10 @@ export class ApiProvider {
   constructor(public http: HttpClient) {
     console.log('Hello ApiProvider Provider');
   }
+  
+  private extractData(res: Response) {
+    let body = res;
+    return body || { };
+  }
 
 }
