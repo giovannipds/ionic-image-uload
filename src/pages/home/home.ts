@@ -15,6 +15,22 @@ export class HomePage {
 
   constructor(public navCtrl: NavController,
     private imagePicker: ImagePicker,
-    private base65: Base64) {}
+    private base64: Base64) {}
+
+  getPhoto() {
+    let options = {
+      maximumImagesCount: 1
+    };
+    this.imagePicker.getPictures(options).then((results) => {
+      for (var i = 0; i < results.length; i++) {
+          this.imgPreview = results[i];
+          this.base64.encodeFile(results[i]).then((base64File: string) => {
+            this.regData.avatar = base64File;
+          }, (err) => {
+            console.log(err);
+          });
+      }
+    }, (err) => { });
+  }
 
 }
