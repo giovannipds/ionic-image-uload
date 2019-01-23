@@ -13,6 +13,7 @@ export class HomePage {
 
   regData = { avatar:'', email: '', password: '', fullname: '' };
   imgPreview = 'assets/imgs/blank-avatar.jpg';
+  loading: any;
 
   constructor(public navCtrl: NavController,
     private imagePicker: ImagePicker,
