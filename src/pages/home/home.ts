@@ -10,6 +10,9 @@ import { Base64 } from '@ionic-native/base64';
 })
 export class HomePage {
 
+  regData = { avatar:'', email: '', password: '', fullname: '' };
+  imgPreview = 'assets/imgs/blank-avatar.jpg';
+
   constructor(public navCtrl: NavController,
     private imagePicker: ImagePicker,
     private base65: Base64) {}
