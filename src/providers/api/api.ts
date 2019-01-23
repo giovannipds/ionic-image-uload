@@ -9,6 +9,8 @@ import { Injectable } from '@angular/core';
   See https://angular.io/guide/dependency-injection for more info on providers
   and Angular DI.
 */
+let apiUrl = 'http://192.168.0.7:3000/';
+
 @Injectable()
 export class ApiProvider {
 
