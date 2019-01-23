@@ -30,7 +30,7 @@ export class DetailPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad DetailPage');
+    this.getUser(this.id)
   }
 
   showLoader(msg){
