@@ -41,4 +41,20 @@ export class DetailPage {
     this.loading.present();
   }
 
+  getUser(id) {
+    this.showLoader("Loading...");
+    this.api.getUser(id)
+      .subscribe(data => {
+        this.user = {
+          email: data.email,
+          fullname: data.fullname,
+          avatar: this.sanitizer.bypassSecurityTrustResourceUrl(data.avatar)
+        };
+        this.loading.dismiss();
+      }, err => {
+        console.log(err);
+        this.loading.dismiss();
+      });
+  }
+
 }
