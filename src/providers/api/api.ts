@@ -11,6 +11,10 @@ import { Injectable } from '@angular/core';
 */
 let apiUrl = 'http://192.168.0.7:3000/';
 
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
+
 @Injectable()
 export class ApiProvider {
 
