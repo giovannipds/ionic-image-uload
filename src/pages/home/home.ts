@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, AlertController, LoadingController } from 'ionic-angular';
 
 import { ImagePicker } from '@ionic-native/image-picker';
 import { Base64 } from '@ionic-native/base64';
+import { ApiProvider } from '../../providers/api/api';
 
 @Component({
   selector: 'page-home',
@@ -15,7 +16,10 @@ export class HomePage {
 
   constructor(public navCtrl: NavController,
     private imagePicker: ImagePicker,
-    private base64: Base64) {}
+    private base64: Base64,
+    public api: ApiProvider,
+    public loadingCtrl: LoadingController,
+    public alertCtrl: AlertController) {}
 
   getPhoto() {
     let options = {
