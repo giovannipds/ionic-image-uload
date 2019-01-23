@@ -17,6 +17,10 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class DetailPage {
 
+  user = {};
+  id: any;
+  loading: any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
