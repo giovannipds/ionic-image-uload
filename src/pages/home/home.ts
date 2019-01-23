@@ -4,6 +4,7 @@ import { NavController, AlertController, LoadingController } from 'ionic-angular
 import { ImagePicker } from '@ionic-native/image-picker';
 import { Base64 } from '@ionic-native/base64';
 import { ApiProvider } from '../../providers/api/api';
+import { DetailPage } from '../detail/detail';
 
 @Component({
   selector: 'page-home',
@@ -53,9 +54,17 @@ export class HomePage {
       let alert = this.alertCtrl.create({
         title: 'Registration Successful',
         subTitle: 'Great! Your registration is success',
-        buttons: ['OK']
+        buttons: [
+          {
+            text: 'OK',
+            handler: () => {
+              this.navCtrl.push(DetailPage, {id:result._id});
+            }
+          }
+        ]
       });
       alert.present();
+
     }, (err) => {
       console.log(err);
       this.loading.dismiss();
