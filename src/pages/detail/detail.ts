@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
+import { ApiProvider } from '../../providers/api/api';
+import { DomSanitizer } from '@angular/platform-browser';
 
 /**
  * Generated class for the DetailPage page.
