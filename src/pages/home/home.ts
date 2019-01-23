@@ -38,4 +38,12 @@ export class HomePage {
     }, (err) => { });
   }
 
+  showLoader(){
+    this.loading = this.loadingCtrl.create({
+        content: 'Submitting...'
+    });
+
+    this.loading.present();
+  }
+
 }
