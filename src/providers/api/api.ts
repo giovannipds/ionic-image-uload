@@ -31,4 +31,9 @@ export class ApiProvider {
     return this.http.post(apiUrl+'users', JSON.stringify(data), httpOptions);
   }
 
+  getUser(id): Observable<any> {
+    return this.http.get(apiUrl+'users/'+id, httpOptions).pipe(
+      map(this.extractData));
+  }
+
 }
