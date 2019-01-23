@@ -46,4 +46,26 @@ export class HomePage {
     this.loading.present();
   }
 
+  register() {
+    this.showLoader();
+    this.api.register(this.regData).subscribe((result) => {
+      this.loading.dismiss();
+      let alert = this.alertCtrl.create({
+        title: 'Registration Successful',
+        subTitle: 'Great! Your registration is success',
+        buttons: ['OK']
+      });
+      alert.present();
+    }, (err) => {
+      console.log(err);
+      this.loading.dismiss();
+      let alert = this.alertCtrl.create({
+        title: 'Registration Failed',
+        subTitle: 'Oh no! Your registration is failed',
+        buttons: ['OK']
+      });
+      alert.present();
+    });
+  }
+
 }
